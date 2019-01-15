@@ -24,3 +24,6 @@ yarn-error.log*
 
 
 ajaxbooks/client/node_modules/
+
+node_modules
+package-lock.json

@@ -20,10 +20,12 @@ class App extends Component {
 
 
 
-
+    var thisFriend
     this.setState({ friends });
-    if (friends[id-1].clicked === "false" && this.state.points !== "GAME OVER") {
-      friends[id-1].clicked = "true";
+    this.state.friends.map((friend, index) => {if(friend.id === id) {thisFriend = index}})
+    console.log(thisFriend)
+    if (friends[thisFriend].clicked === "false" && this.state.points !== "GAME OVER") {
+      friends[thisFriend].clicked = "true";
       this.setState({ points: this.state.points + 1 });
       
       var currentIndex = friends.length, temporaryValue, randomIndex;
@@ -44,6 +46,9 @@ class App extends Component {
     }
     else {
       this.setState({ points: "GAME OVER" });
+      setTimeout(() => {
+        window.location.reload();
+      }, 1000);
     }
 
   };

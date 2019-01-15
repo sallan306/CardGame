@@ -11,6 +11,8 @@
   },
   "homepage": "https://sallan306.github.io/CardGame/",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -b master -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
